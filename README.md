@@ -1,5 +1,16 @@
 	# BuildingDistributedAppsGo
 
+10/04/2021
+
+Gitkraken
+Alt + T
+git status
+git add .
+git commit -m "My message"
+
+GitKraken | push
+
+
 Weird not working
 go version 
 which go

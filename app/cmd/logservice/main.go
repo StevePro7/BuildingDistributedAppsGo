@@ -32,5 +32,5 @@ func main() {
 	}
 
 	<-ctx.Done()
-	fmt.Println("Steve shut down log service")
+	fmt.Println("Shutting down log service")
 }

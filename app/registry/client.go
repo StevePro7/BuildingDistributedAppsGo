@@ -25,3 +25,21 @@ func RegisterService(r Registration) error {
 	}
 	return nil
 }
+
+func ShutdownService(serviceURL string) error {
+	req, err := http.NewRequest(http.MethodDelete,
+		serviceURL,
+		bytes.NewBuffer([]byte(serviceURL)))
+
+	if err != nil {
+		return err
+	}
+
+	req.Header.Add("Content-Type", "text/plain")
+	res, err := http.DefaultClient.Do(req)
+	if res.StatusCode != http.StatusOK {
+		return fmt.Errorf("Failed to de-register service %v Code: %v", serviceURL, res.StatusCode)
+	}
+
+	return err
+}

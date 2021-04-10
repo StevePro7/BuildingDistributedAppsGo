@@ -22,7 +22,7 @@ func main() {
 	}()
 
 	go func() {
-		fmt.Println("Registry service Steven started")
+		fmt.Println("Registry service started.  Press any key to stop.")
 		var s string
 		fmt.Scanln(&s)
 		srv.Shutdown(ctx)
@@ -30,5 +30,5 @@ func main() {
 	}()
 
 	<-ctx.Done()
-	fmt.Println("Shutting down Registry service Steven")
+	fmt.Println("Shutting down Registry service...")
 }

@@ -69,3 +69,18 @@ go build .
 cd app/cmd/logservice
 go build .
 ./logservice
+
+
+
+registryservice
+De-register
+cd app/cmd/registryservice
+./registryservice
+
+cd app/cmd/logservice
+go build .
+./logservice
+
+
+http://localhost:4000
+http://localhost:4000x

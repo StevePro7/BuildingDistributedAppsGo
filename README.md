@@ -36,3 +36,23 @@ Now works OK
 
 IMPORTANT
 go mod init app
+
+
+LogService TEST
+cd app/cmd/logservice
+go build .
+
+NB:
+I am getting some error about GOROOT not set because I installed snap
+weird as this was all working the other day
+
+
+POSTMAN Canary
+https://www.postman.com/downloads/canary
+
+cmd prompt
+cd ~
+cd Steven
+cd Installation
+cd PostmanCanary
+./PostmanCanary

@@ -34,5 +34,5 @@ go build .
 Now works OK		
 
 
-
-go mod init BuildingDistributedAppsGo
+IMPORTANT
+go mod init app

@@ -56,3 +56,16 @@ cd Steven
 cd Installation
 cd PostmanCanary
 ./PostmanCanary
+
+
+
+REGISTRATION services
+Two terminals
+
+cd app/cmd/registryservice
+go build .
+./registryservice
+
+cd app/cmd/logservice
+go build .
+./logservice

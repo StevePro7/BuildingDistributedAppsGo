@@ -8,11 +8,7 @@ import (
 	"net/http"
 )
 
-//import
-
-func Start(ctx context.Context, host, port string, reg registry.Registration,
-	registerHandlersFunc func()) (context.Context, error) {
-
+func Start(ctx context.Context, host, port string, reg registry.Registration, registerHandlersFunc func()) (context.Context, error) {
 	registerHandlersFunc()
 	ctx = startService(ctx, reg.ServiceName, host, port)
 
@@ -25,7 +21,6 @@ func Start(ctx context.Context, host, port string, reg registry.Registration,
 }
 
 func startService(ctx context.Context, serviceName registry.ServiceName, host, port string) context.Context {
-
 	ctx, cancel := context.WithCancel(ctx)
 
 	var srv http.Server
@@ -37,14 +32,13 @@ func startService(ctx context.Context, serviceName registry.ServiceName, host, p
 	}()
 
 	go func() {
-		fmt.Printf("%v started.  Press any key to stop.", serviceName)
+		fmt.Printf("%v started.  Press any key to stop.\n", serviceName)
 		var s string
 		fmt.Scanln(&s)
 		err := registry.ShutdownService(fmt.Sprintf("http://%v:%v", host, port))
 		if err != nil {
 			log.Println(err)
 		}
-
 		srv.Shutdown(ctx)
 		cancel()
 	}()

@@ -13,8 +13,9 @@ func main() {
 
 	ctx, cancel := context.WithCancel(context.Background())
 	defer cancel()
+
 	var srv http.Server
-	srv.Addr = registry.ServerPort
+	srv.Addr = ":3000"
 
 	go func() {
 		log.Println(srv.ListenAndServe())
@@ -30,5 +31,5 @@ func main() {
 	}()
 
 	<-ctx.Done()
-	fmt.Println("Shutting down Registry service...")
+	fmt.Println("Shutting down registry service")
 }

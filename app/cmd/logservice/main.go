@@ -19,18 +19,16 @@ func main() {
 	r.ServiceName = registry.LogService
 	r.ServiceURL = serviceAddress
 
-	ctx, err := service.Start(
-		context.Background(),
+	ctx, err := service.Start(context.Background(),
 		host,
 		port,
 		r,
-		log.RegisterHandlers,
-	)
-
+		log.RegisterHandlers)
 	if err != nil {
 		stlog.Fatal(err)
 	}
 
 	<-ctx.Done()
 	fmt.Println("Shutting down log service")
+	
 }

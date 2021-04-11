@@ -24,7 +24,7 @@ func (r *registry) add(reg Registration) error {
 	return nil
 }
 
-reg = registry{registrations: make([]Registration, 0),
+var reg = registry{registrations: make([]Registration, 0),
 	mutex: new(sync.RWMutex),
 }
 
@@ -37,7 +37,7 @@ func (r *registry) remove(url string) error {
 			return nil
 		}
 	}
-	return fmt.Errorf("Service at URL %v not found", url)
+	return fmt.Errorf("service at url %v not found", url)
 }
 
 type RegistryService struct{}
@@ -60,7 +60,7 @@ func (s RegistryService) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 			log.Println(err)
 			w.WriteHeader(http.StatusBadRequest)
 			return
-			
+
 		}
 	case http.MethodDelete:
 		payload, err := ioutil.ReadAll(req.Body)

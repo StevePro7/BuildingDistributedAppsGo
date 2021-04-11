@@ -20,7 +20,7 @@ func RegisterService(r Registration) error {
 		return err
 	}
 	if res.StatusCode != http.StatusOK {
-		return fmt.Errorf("Failed to register service. Registry service responded with code %v", res.StatusCode)
+		return fmt.Errorf("failed to register service. registry service responded with code %v", res.StatusCode)
 	}
 	return nil
 }
@@ -35,7 +35,7 @@ func ShutdownService(serviceURL string) error {
 	}
 	res, err := http.DefaultClient.Do(req)
 	if res.StatusCode != http.StatusOK {
-		return fmt.Errorf("Failed to deregister service. Registry service responded with code %v", res.StatusCode)
+		return fmt.Errorf("failed to deregister service. registry service responded with code %v", res.StatusCode)
 	}
 	return err
 }

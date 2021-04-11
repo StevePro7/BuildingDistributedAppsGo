@@ -84,3 +84,14 @@ go build .
 
 http://localhost:4000
 http://localhost:4000x
+
+
+Windows VS Code
+ST1005 go-staticcheck error strings should not be capitalized
+https://staticcheck.io/docs/checks
+
+problem
+return fmt.Errorf("Service at Url %v not found", url)
+
+solution
+return fmt.Errorf("service at url %v not found", url)

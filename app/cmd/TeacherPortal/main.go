@@ -43,4 +43,5 @@ func main() {
 
 	<-ctx.Done()
 	fmt.Println("Shutting down teacher portal")
+
 }

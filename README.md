@@ -1,6 +1,7 @@
-	# BuildingDistributedAppsGo
-
+# BuildingDistributedAppsGo
 10/04/2021
+
+https://app.pluralsight.com/library/courses/building-distributed-applications-go/table-of-contents
 
 Gitkraken
 Alt + T
